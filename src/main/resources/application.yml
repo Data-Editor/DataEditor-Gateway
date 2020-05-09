@@ -16,6 +16,19 @@ eureka:
     instance:
       preferIpAddress: true
 
+zuul:
+  routes:
+    token-service:
+      path: /token/**
+      strip-prefix: false
+  ignored-services: '*'
+  prefix: /api
+  host:
+    connect-timeout-millis: 1000
+    socket-timeout-millis: 1000
+
+dataEditor:
+  publicKey: publicKey.pem
 ---
 
 
